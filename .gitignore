@@ -179,3 +179,9 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+# Specific to this project
+odds.pdf
+evens.pdf
+evens-flipped.pdf
+final.pdf
