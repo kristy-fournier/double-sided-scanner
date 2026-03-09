@@ -1,10 +1,10 @@
 import pypdf
 global pdfWriter
 
-def flip(pdfObj:pypdf.PdfReader) -> pypdf.PdfWriter:
+# Invert the order of pages in a pdfReader
+def flip(pdfReader:pypdf.PdfReader) -> pypdf.PdfWriter:
 
     pdfWriter = pypdf.PdfWriter()
-    pdfReader = pypdf.PdfReader(pdfObj)
 
     pdfLen = len(pdfReader.pages)
 
@@ -17,5 +17,6 @@ if __name__ == "__main__":
     if pdfName == "":
         pdfName = "evens.pdf"
     pdfObj=open(pdfName,'rb')
+    pdfReader = pypdf.PdfReader(pdfObj)
     pdfWriter = flip(pdfObj)
     pdfWriter.write("evens-flipped.pdf")

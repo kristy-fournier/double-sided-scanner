@@ -15,6 +15,11 @@ pdfWriter= pypdf.PdfWriter()
 pdfReader1 = pypdf.PdfReader(pdf1obj)
 pdfReader2 = pypdf.PdfReader(pdf2obj)
 
+pdf1obj.close()
+pdf2obj.close()
+
+pdf2Flipped = evenFlipper.flip(pdfReader2)
+
 pdfLen1 = len(pdfReader1.pages)
 pdfLen2 = len(pdfReader2.pages)
 
@@ -26,7 +31,7 @@ for i in range(totalLen):
     except:
         pass
     try:
-        pdfWriter.add_page(pdfReader2.pages[i])
+        pdfWriter.add_page(pdf2Flipped.pages[i])
     except:
         pass
 
